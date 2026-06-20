@@ -7,12 +7,13 @@
 
 /* ===== Root & Variables ===== */
 :root {
-    --bg-color: #faf9f6;
-    --primary-text: #0c0c06; /* slightly darker than #111509 */
-    --secondary-color: #46400A; /* dark olive */
-    --secondary-bg: #959867; /* light earthy olive for backgrounds */
-    --accent-border: #D4C9BC;
+    --bg-color: #fbfaf7; /* slightly lighter than before */
     --serif-font: 'Georgia', 'Garamond', serif;
+    --sans-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    --primary-text: #0c0c06; /* slightly darker than #111509 */
+    --secondary-color: #46400A; /* dark olive for accents */
+    --footer-bg: #959867; /* footer/background secondary */
+    --accent-border: #D4C9BC;
 }
 
 /* ===== Typography ===== */
@@ -20,33 +21,31 @@ body {
     font-family: var(--serif-font);
     background-color: var(--bg-color);
     color: var(--primary-text);
-    line-height: 1.7; /* larger spacing for readability */
-    font-size: 17px; /* make everything a bit bigger */
+    line-height: 1.75; /* larger spacing for readability */
+    font-size: 18px; /* make everything bigger */
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: var(--serif-font);
-    margin-top: 1.25em;
-    margin-bottom: 0.6em;
-    font-weight: normal;
-    letter-spacing: 0.4px;
+/* Titles (use sans) */
+h1.title, h2, h3, h4, h5 {
+    font-family: var(--sans-font);
     color: var(--primary-text);
 }
 
-h1 {
-    font-size: 2.6em; /* larger */
-    margin-top: 0.4em;
-    margin-bottom: 0.2em;
+h1.title {
+    font-size: 2.4rem;
+    margin: 0.2rem 0 0.3rem 0;
 }
 
 h2 {
-    font-size: 1.6em;
+    font-size: 1.7rem;
+    margin-top: 0.8rem;
+    margin-bottom: 0.6rem;
     border-bottom: 1px solid var(--accent-border);
-    padding-bottom: 0.45em;
+    padding-bottom: 0.5rem;
 }
 
 p {
-    margin-bottom: 1em;
+    margin-bottom: 1.05rem;
     color: var(--primary-text);
 }
 
@@ -58,168 +57,52 @@ a {
     transition: opacity 0.18s ease;
 }
 
-a:hover {
-    opacity: 0.75;
-}
+a:hover { opacity: 0.75; }
 
 /* ===== Navigation ===== */
-.navbar {
-    background-color: var(--bg-color);
-    border-bottom: 1px solid var(--accent-border);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
+.navbar { background-color: var(--bg-color); border-bottom: 1px solid var(--accent-border); position: sticky; top: 0; z-index: 100; }
 
-.nav-container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 1em 1.5em;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+.nav-container { max-width: 1100px; margin: 0 auto; padding: 1em 1.5em; display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
 
-.nav-logo {
-    font-family: var(--serif-font);
-    text-decoration: none;
-    font-weight: 700;
-    color: var(--primary-text);
-    display: inline-block;
-}
+/* Nav logo: use sans */
+.nav-logo { font-family: var(--sans-font); text-decoration: none; font-weight: 700; color: var(--primary-text); display: inline-block; }
+.nav-logo-line1 { display: block; font-size: 1.05rem; letter-spacing: 1px; text-transform: uppercase; }
+.nav-logo-line2 { display: block; font-size: 0.85rem; color: var(--secondary-color); text-align: center; }
 
-.nav-logo-line1 {
-    display: block;
-    font-size: 1.05rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
-
-.nav-logo-line2 {
-    display: block;
-    font-size: 0.85rem;
-    color: var(--secondary-color);
-    text-align: center;
-}
-
-.nav-container .nav-menu {
-    display: flex;
-    list-style: none;
-    gap: 1.25em;
-}
-
-.nav-link {
-    text-decoration: none;
-    font-size: 1rem;
-    position: relative;
-    transition: opacity 0.18s ease;
-    color: var(--secondary-color);
-}
-
-.nav-link:hover {
-    opacity: 0.8;
-}
-
-.nav-link.active {
-    font-weight: 600;
-}
+/* Nav menu: keep serif */
+.nav-menu { display: flex; list-style: none; gap: 1.25em; }
+.nav-link { font-family: var(--serif-font); text-decoration: none; font-size: 1rem; color: var(--secondary-color); transition: opacity 0.18s ease; }
+.nav-link:hover { opacity: 0.8; }
+.nav-link.active { font-weight: 600; }
 
 /* ===== Layout ===== */
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 2.5em 1.5em;
-}
+.container { max-width: 1100px; margin: 0 auto; padding: 2.5em 1.5em; }
 
 /* ===== Intro Two-column ===== */
-.intro {
-    display: flex;
-    gap: 2.5rem;
-    align-items: flex-start;
-    margin-bottom: 2.5em;
-}
+.intro { display: flex; gap: 1.25rem; align-items: flex-start; margin-bottom: 2.5em; }
+.intro-left { flex: 0 0 320px; display: flex; flex-direction: column; gap: 0.4rem; }
+.intro-right { flex: 1 1 auto; }
 
-.intro-left {
-    flex: 0 0 320px; /* slightly wider left column */
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
+.profile-image { width: 180px; height: 180px; object-fit: cover; display: block; border: 1px solid var(--accent-border); }
 
-.intro-right {
-    flex: 1 1 auto;
-}
+.profile-info h1.title { margin: 0; }
+.university { margin: 0; color: var(--secondary-color); font-style: normal; }
 
-.profile-image {
-    width: 180px;
-    height: 180px;
-    object-fit: cover;
-    display: block;
-    border: 1px solid var(--accent-border);
-    /* square image (no border-radius) */
-}
-
-.profile-info h1 {
-    margin: 0;
-    font-size: 1.6rem;
-    color: var(--primary-text);
-}
-
-.subtitle {
-    margin: 0.2rem 0 0.3rem 0;
-    color: var(--secondary-color);
-}
-
-.university {
-    margin: 0 0 0.6rem 0;
-    color: var(--secondary-color);
-    font-style: normal;
-}
-
-.profile-links {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.profile-link {
-    display: inline-block;
-    padding: 0.35rem 0.6rem;
-    color: var(--secondary-color);
-    text-decoration: none;
-    border-radius: 3px;
-    font-size: 1rem;
-}
-
-.profile-link:hover {
-    background: rgba(70,64,10,0.06);
-}
+.profile-links { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.6rem; }
+.profile-link { display: inline-block; padding: 0.35rem 0.6rem; color: var(--secondary-color); text-decoration: none; border-radius: 3px; font-size: 1rem; }
+.profile-link:hover { background: rgba(70,64,10,0.06); }
 
 /* ===== Bio & Content Sections ===== */
-.bio, .research-section, .teaching-section, .cv-section, .contact-section {
-    margin-bottom: 2.5em;
-}
-
-.bio p, .research-section p, .teaching-section p, .cv-section p {
-    max-width: 760px;
-    margin-left: 0;
-}
+.bio, .research-section, .teaching-section, .cv-section, .contact-section { margin-bottom: 2.5em; }
+.bio p, .research-section p, .teaching-section p, .cv-section p { max-width: 760px; margin-left: 0; }
 
 /* ===== Footer ===== */
-footer {
-    background-color: var(--secondary-bg);
-    border-top: 1px solid var(--accent-border);
-    padding: 1.8em;
-    text-align: center;
-    font-size: 0.95em;
-    margin-top: 3em;
-    color: var(--primary-text);
-}
+footer { background-color: var(--footer-bg); border-top: 1px solid var(--accent-border); padding: 1.8em; text-align: center; font-size: 0.95em; margin-top: 3em; color: var(--primary-text); }
 
 /* ===== Other content styles preserved ===== */
 .paper { margin-bottom: 2em; padding-bottom: 2em; border-bottom: 1px solid var(--accent-border); }
 .paper:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-.paper-title { font-family: var(--serif-font); font-size: 1.25em; margin-bottom: 0.5em; margin-top: 0; }
+.paper-title { font-family: var(--sans-font); font-size: 1.25em; margin-bottom: 0.5em; margin-top: 0; }
 .paper-meta { font-size: 0.95em; font-style: italic; margin-bottom: 0.75em; color: var(--primary-text); opacity: 0.9; }
 .paper-abstract { font-size: 1rem; line-height: 1.7; margin-bottom: 0.75em; }
 .paper-links { display: flex; gap: 1.25em; flex-wrap: wrap; }
@@ -227,7 +110,7 @@ footer {
 
 .course { margin-bottom: 1.75em; padding-bottom: 1.75em; border-bottom: 1px solid var(--accent-border); }
 .course:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-.course-title { font-family: var(--serif-font); font-size: 1.05em; margin-bottom: 0.25em; margin-top: 0; }
+.course-title { font-family: var(--sans-font); font-size: 1.05em; margin-bottom: 0.25em; margin-top: 0; }
 .course-role { font-size: 0.95em; font-style: italic; margin-bottom: 0.5em; opacity: 0.85; }
 .course-description { font-size: 1rem; line-height: 1.6; }
 
@@ -258,7 +141,7 @@ button:hover { opacity: 0.88; }
 
 @media (max-width: 480px) {
     body { font-size: 16px; }
-    h1 { font-size: 1.6em; }
+    h1.title { font-size: 1.6em; }
     .nav-menu { flex-direction: column; gap: 0.8em; font-size: 0.95em; }
     .container { padding: 1em 0.9em; }
     .profile-image { width: 140px; height: 140px; }
