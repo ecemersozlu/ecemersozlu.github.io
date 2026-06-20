@@ -9,8 +9,8 @@
 :root {
     --bg-color: #fbfaf7; /* slightly lighter than before */
     --serif-font: 'Georgia', 'Garamond', serif;
-    --sans-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-    --primary-text: #0c0c06; /* slightly darker than #111509 */
+    --sans-font: 'Inter', 'Epilogue', 'Helvetica Neue', Arial, sans-serif;
+    --primary-text: #050503; /* slightly darker than #111509 */
     --secondary-color: #46400A; /* dark olive for accents */
     --footer-bg: #959867; /* footer/background secondary */
     --accent-border: #959867; /* updated as requested */
