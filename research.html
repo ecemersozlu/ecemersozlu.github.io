@@ -5,6 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Research — Ecem Ersozlu</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .section-subtitle {
+            font-style: italic;
+            font-family: serif;
+            margin-bottom: 1.5rem;
+        }
+
+        .abstract-button {
+            padding: 0.5rem 1rem;
+            border: 2px solid var(--accent-border-color);
+            background-color: var(--primary-bg);
+            color: #46400A;
+            cursor: pointer;
+            font-weight: 600;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            margin-top: 0.5rem;
+        }
+
+        .abstract-button:hover {
+            opacity: 0.8;
+        }
+
+        .abstract-button.active {
+            border-color: #46400A;
+        }
+
+        .full-abstract {
+            display: none;
+            margin-top: 1rem;
+            padding: 1rem;
+            background-color: rgba(70, 64, 10, 0.05);
+            border-left: 3px solid var(--accent-border-color);
+        }
+
+        .full-abstract.active {
+            display: block;
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar">
@@ -27,7 +66,7 @@
         <section class="research-section">
             <h2>Research</h2>
             
-            <h3>Working Papers</h3>
+            <h3 class="section-subtitle">Working Papers</h3>
             
             <article class="paper">
                 <h4 class="paper-title">Paper Title Here</h4>
@@ -36,6 +75,11 @@
                     Brief abstract of your paper. This section should provide a concise overview of your research question, 
                     methodology, and key findings.
                 </p>
+                <button class="abstract-button" onclick="toggleAbstract(this)">Abstract</button>
+                <div class="full-abstract">
+                    <p>Brief abstract of your paper. This section should provide a concise overview of your research question, 
+                    methodology, and key findings. You can expand this section with more detailed information about your research.</p>
+                </div>
                 <div class="paper-links">
                     <a href="#" class="paper-link">PDF</a>
                     <a href="#" class="paper-link">Appendix</a>
@@ -49,12 +93,17 @@
                     Brief abstract of your paper. This section should provide a concise overview of your research question, 
                     methodology, and key findings.
                 </p>
+                <button class="abstract-button" onclick="toggleAbstract(this)">Abstract</button>
+                <div class="full-abstract">
+                    <p>Brief abstract of your paper. This section should provide a concise overview of your research question, 
+                    methodology, and key findings. You can expand this section with more detailed information about your research.</p>
+                </div>
                 <div class="paper-links">
                     <a href="#" class="paper-link">PDF</a>
                 </div>
             </article>
 
-            <h3>Works in Progress</h3>
+            <h3 class="section-subtitle">Works in Progress</h3>
             
             <article class="paper">
                 <h4 class="paper-title">Research Project Title</h4>
@@ -62,6 +111,10 @@
                 <p class="paper-abstract">
                     Brief description of your current research project. What is the research question? What methods are you using?
                 </p>
+                <button class="abstract-button" onclick="toggleAbstract(this)">Abstract</button>
+                <div class="full-abstract">
+                    <p>Brief description of your current research project. What is the research question? What methods are you using? You can provide more details about your methodology and expected contributions.</p>
+                </div>
             </article>
 
             <article class="paper">
@@ -70,6 +123,10 @@
                 <p class="paper-abstract">
                     Brief description of another research project you're working on.
                 </p>
+                <button class="abstract-button" onclick="toggleAbstract(this)">Abstract</button>
+                <div class="full-abstract">
+                    <p>Brief description of another research project you're working on. Include information about your research objectives, methodology, and expected outcomes.</p>
+                </div>
             </article>
         </section>
     </main>
@@ -77,5 +134,13 @@
     <footer>
         <p>&copy; 2026 Ecem Ersozlu. All rights reserved.</p>
     </footer>
+
+    <script>
+        function toggleAbstract(button) {
+            const fullAbstract = button.nextElementSibling;
+            fullAbstract.classList.toggle('active');
+            button.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
