@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Research — Ecem Ersozlu</title>
+    <title>Ersozlu - Research</title>
     <link rel="stylesheet" href="style.css">
     <style>
         .section-subtitle {
@@ -36,9 +36,10 @@
         .full-abstract {
             display: none;
             margin-top: 1rem;
-            padding: 1rem;
+            margin-left: 1rem;
+            padding: 2rem;
             background-color: rgba(70, 64, 10, 0.05);
-            border-left: 3px solid var(--accent-border-color);
+            border-left: 1px solid var(--accent-border-color);
         }
 
         .full-abstract.active {
@@ -55,10 +56,17 @@
         }
 
         .wip-item-title {
-            font-weight: 600;
-            color: #46400A;
+            color: var(--primary-text
         }
     </style>
+    <script>
+        function toggleAbstract(button) {
+            const fullAbstract = button.nextElementSibling;
+            fullAbstract.classList.toggle('active');
+            button.classList.toggle('active');
+        }
+    </script>
+
 </head>
 <body>
     <nav class="navbar">
@@ -85,7 +93,7 @@
             
             <article class="paper">
                 <h4 class="paper-title">Speaking for the Firewall: Mainstream Moralization of Democracy</h4>
-                <p class="paper-meta">Presented at EPSS, 2026</p>
+                <p class="paper-meta">Presented at EPSS 2026</p>
                 <p class="paper-abstract">
                     This paper examines how mainstream parties in Western Europe moralize democracy in response to radical right electoral pressure.
                 </p>
@@ -96,7 +104,7 @@
                         mount, how do parties balance their issue agendas with debating democracy? I argue that the success of 
                         nativist anti-establishment parties in Western Europe prompts dominant parties to moralize democracy 
                         under agenda constraints. Radical right popularity, as a reminder of authoritarian history, activates 
-                        the moral aversion that underpins the firewall (or \textit{cordon sanitaire)} of non-cooperation with 
+                        the moral aversion that underpins the firewall (cordon sanitaire) of non-cooperation with 
                         extremist parties. Using moral dictionaries and stem searches benchmarked against ManifestoBERTa, I analyze
                         parliamentary debate corpora from Germany, the Netherlands, Sweden, and the United Kingdom, 1990–2019, to 
                         construct a longitudinal panel of moral rhetoric in parties’ democracy-related speech. The findings show that, 
@@ -126,8 +134,8 @@
             </article>
             
              <article class="paper">
-                <h4 class="paper-title">Policy or Democracy?: Voter Priorities and Party Perceptions Under Populist Challenge</h4>
-                <p class="paper-meta">Presented at MPSA, 2025</p>
+                <h4 class="paper-title">Voter Priorities and Mainstream Party Perceptions Under Populist Challenge</h4>
+                <p class="paper-meta">Presented at MPSA 2025</p>
                 <p class="paper-abstract">
                     This paper examines how perceived democratic threat from radical populist parties leads mainstream voters to 
                     blur ideological differences between established parties and assimilate those parties’ positions toward their own.</p>
@@ -158,7 +166,9 @@
                 <li>
                     <span class="wip-item-title">From Survey to Speech: When Do Attitude Measures Capture Political Expression?” (with E. West)</span>
                 </li>
-                
+                <li>
+                    <span class="wip-item-title">Comparing the Impact of Moral and Non-Moral Rhetoric on Political Belief Updating</span>
+                </li>
             </ul>
         </section>
     </main>
@@ -167,12 +177,5 @@
         <p>&copy; 2026 Ecem Ersozlu. All rights reserved.</p>
     </footer>
 
-    <script>
-        function toggleAbstract(button) {
-            const fullAbstract = button.nextElementSibling;
-            fullAbstract.classList.toggle('active');
-            button.classList.toggle('active');
-        }
-    </script>
 </body>
 </html>
