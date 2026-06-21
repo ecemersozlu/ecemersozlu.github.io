@@ -18,7 +18,8 @@
             background-color: var(--primary-bg);
             color: #46400A;
             cursor: pointer;
-            font-weight: 600;
+            font-weight: normal;
+            font-family: sans-serif;
             border-radius: 4px;
             transition: all 0.3s ease;
             margin-top: 0.5rem;
@@ -42,6 +43,20 @@
 
         .full-abstract.active {
             display: block;
+        }
+
+        .wip-list {
+            list-style-type: disc;
+            margin-left: 2rem;
+        }
+
+        .wip-list li {
+            margin-bottom: 0.75rem;
+        }
+
+        .wip-item-title {
+            font-weight: 600;
+            color: #46400A;
         }
     </style>
 </head>
@@ -80,10 +95,6 @@
                     <p>Brief abstract of your paper. This section should provide a concise overview of your research question, 
                     methodology, and key findings. You can expand this section with more detailed information about your research.</p>
                 </div>
-                <div class="paper-links">
-                    <a href="#" class="paper-link">PDF</a>
-                    <a href="#" class="paper-link">Appendix</a>
-                </div>
             </article>
 
             <article class="paper">
@@ -98,36 +109,20 @@
                     <p>Brief abstract of your paper. This section should provide a concise overview of your research question, 
                     methodology, and key findings. You can expand this section with more detailed information about your research.</p>
                 </div>
-                <div class="paper-links">
-                    <a href="#" class="paper-link">PDF</a>
-                </div>
             </article>
 
             <h3 class="section-subtitle">Works in Progress</h3>
             
-            <article class="paper">
-                <h4 class="paper-title">Research Project Title</h4>
-                <p class="paper-meta">In Progress</p>
-                <p class="paper-abstract">
-                    Brief description of your current research project. What is the research question? What methods are you using?
-                </p>
-                <button class="abstract-button" onclick="toggleAbstract(this)">Abstract</button>
-                <div class="full-abstract">
-                    <p>Brief description of your current research project. What is the research question? What methods are you using? You can provide more details about your methodology and expected contributions.</p>
-                </div>
-            </article>
-
-            <article class="paper">
-                <h4 class="paper-title">Another Research Project</h4>
-                <p class="paper-meta">In Progress</p>
-                <p class="paper-abstract">
-                    Brief description of another research project you're working on.
-                </p>
-                <button class="abstract-button" onclick="toggleAbstract(this)">Abstract</button>
-                <div class="full-abstract">
-                    <p>Brief description of another research project you're working on. Include information about your research objectives, methodology, and expected outcomes.</p>
-                </div>
-            </article>
+            <ul class="wip-list">
+                <li>
+                    <span class="wip-item-title">Research Project Title</span>
+                    <p>Brief description of your current research project. What is the research question? What methods are you using?</p>
+                </li>
+                <li>
+                    <span class="wip-item-title">Another Research Project</span>
+                    <p>Brief description of another research project you're working on.</p>
+                </li>
+            </ul>
         </section>
     </main>
 
